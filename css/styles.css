@@ -1,81 +1,99 @@
-/* Inside page */
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* =========================
+   INSIDE PAGE BACKGROUND
+========================= */
+
 .inside {
   min-height: 300vh;
   background-image: url("../images/Act2BACKGROUND.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: relative;
   overflow-x: hidden;
 }
 
+/* =========================
+   CENTERPIECE (CIPHERS)
+========================= */
+
 .centerpiece {
   position: sticky;
-  top: 40vh;
+  top: 35vh;
   display: flex;
   justify-content: center;
   align-items: center;
- gap: 220px; /* equidistant spacing */
-  z-index: 2;
+  gap: 220px;
+  z-index: 5;
   pointer-events: none;
 }
 
 .cipher {
-  width: min(600vw, 620px);
+  width: min(40vw, 420px);
   height: auto;
+  filter: drop-shadow(0 0 24px rgba(0,0,0,0.35));
 }
 
+/* =========================
+   CLOCK FIELD LAYOUT
+========================= */
 
 .clock-field {
+  margin-top: 120vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 80px;
   gap: 24px;
+  padding: 80px;
 }
 
-
-.clock {
-  width: 60px;
-  opacity: 0.85;
-  cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+/* Make links invisible visually */
+.clock-field a {
+  text-decoration: none;
 }
 
-.clock:hover {
-  transform: scale(1.15) rotate(2deg);
-  opacity: 1;
-}
-
-.clock:nth-child(3n) { width: 50px; }
-.clock:nth-child(5n) { width: 70px; }
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-8px); }
-}
-
-.clock {
-  animation: float 6s ease-in-out infinite alternate;
-}
+/* =========================
+   CLOCK UNIT (CRITICAL)
+========================= */
 
 .clock-unit {
   position: relative;
-  display: inline-block;
   width: 70px;
-  height: 70px; /* 🔴 CRITICAL */
-  margin: 12px;
+  height: 70px;
 }
+
+/* Extra space for pendulum clock */
+.clock-unit.has-pendulum {
+  height: 95px;
+}
+
+/* =========================
+   CLOCK FACE
+========================= */
 
 .clock-face {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
-
+/* =========================
+   CLOCK HANDS
+========================= */
 
 .hand {
   position: absolute;
@@ -83,30 +101,57 @@
   left: 50%;
   transform-origin: center bottom;
   transform: translate(-50%, -100%);
+  z-index: 3;
   pointer-events: none;
 }
 
-.clock-unit.has-pendulum {
-  height: 95px;
+/* Animation */
+@keyframes spin {
+  from { transform: translate(-50%, -100%) rotate(0deg); }
+  to   { transform: translate(-50%, -100%) rotate(360deg); }
 }
 
-
-/* spin back to see if these are needed
-.clocks {
-  display: flex;
-  gap: 20px;
-  padding: 40px;
+.hour {
+  height: 22px;
+  animation: spin 60s linear infinite;
 }
 
-.clocks img {
-  width: 120px;
-  cursor: pointer;
-  transition: transform 0.2s;
+.minute {
+  height: 30px;
+  animation: spin 12s linear infinite;
 }
 
-.clocks img:hover {
-  transform: scale(1.05);
-} */
+/* =========================
+   PENDULUM (CLOCK 01 ONLY)
+========================= */
+
+@keyframes swing {
+  from { transform: rotate(-10deg); }
+  to   { transform: rotate(10deg); }
+}
+
+.pendulum {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform-origin: top center;
+  animation: swing 1.2s ease-in-out infinite alternate;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* =========================
+   OPTIONAL POLISH (SAFE)
+========================= */
+
+.clock-unit:hover {
+  transform: scale(1.08);
+}
+
+.clock-unit {
+  transition: transform 0.15s ease;
+}
+
 
 /* Final void */
 .void {
