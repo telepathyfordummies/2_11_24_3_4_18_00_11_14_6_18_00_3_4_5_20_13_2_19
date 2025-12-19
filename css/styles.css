@@ -71,13 +71,14 @@ html, body {
 
 .clock-unit {
   position: relative;
-  width: 70px;
-  height: 70px;
+  width: 140px;   
+  height: 140px; 
 }
+
 
 /* Extra space for pendulum clock */
 .clock-unit.has-pendulum {
-  height: 95px;
+  height: 190px;
 }
 
 /* =========================
@@ -117,7 +118,7 @@ html, body {
 }
 
 .minute {
-  height: 30px;
+  height: 65px;
   animation: spin 12s linear infinite;
 }
 
@@ -132,7 +133,7 @@ html, body {
 
 .pendulum {
   position: absolute;
-  bottom: -22px;
+  bottom: -40px;
   left: 50%;
   transform-origin: top center;
   animation: swing 1.2s ease-in-out infinite alternate;
