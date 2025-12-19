@@ -18,5 +18,7 @@ for (let i = 1; i <= CLOCK_COUNT; i++) {
     ${hasPendulum ? `<img src="images/clocks/clock${id}_pendulum.png" class="pendulum">` : ""}
   `;
 
+  clock.className = `clock-unit ${hasPendulum ? "has-pendulum" : ""}`;
+
   clockField.appendChild(clock);
 }
