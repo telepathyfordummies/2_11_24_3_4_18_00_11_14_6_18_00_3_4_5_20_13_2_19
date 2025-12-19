@@ -60,6 +60,12 @@
   animation: float 6s ease-in-out infinite alternate;
 }
 
+.clock-unit {
+  position: relative;
+  display: inline-block; /* 🔴 THIS IS CRITICAL */
+  width: 70px;
+}
+
 
 /* spin back to see if these are needed
 .clocks {
