@@ -1,0 +1,92 @@
+/* Inside page */
+.inside {
+  min-height: 300vh;
+  background-image: url("../images/Act2BACKGROUND.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.centerpiece {
+  position: sticky;
+  top: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 160px; /* equidistant spacing */
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cipher {
+  width: 220px;
+  height: auto;
+}
+
+.clock-field {
+  margin-top: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 80px;
+  z-index: 1;
+}
+
+.clock {
+  width: 60px;
+  opacity: 0.85;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.clock:hover {
+  transform: scale(1.15) rotate(2deg);
+  opacity: 1;
+}
+
+.clock:nth-child(3n) { width: 50px; }
+.clock:nth-child(5n) { width: 70px; }
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
+.clock {
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+
+/* spin back to see if these are needed
+.clocks {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.clocks img {
+  width: 120px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.clocks img:hover {
+  transform: scale(1.05);
+} */
+
+/* Final void */
+.void {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.void-link {
+  color: black;
+  text-decoration: underline;
+  font-size: 18px;
+}
