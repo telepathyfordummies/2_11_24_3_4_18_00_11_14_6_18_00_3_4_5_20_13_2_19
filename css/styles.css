@@ -66,6 +66,16 @@
   width: 70px;
 }
 
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center bottom;
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+}
+
+
 
 /* spin back to see if these are needed
 .clocks {
