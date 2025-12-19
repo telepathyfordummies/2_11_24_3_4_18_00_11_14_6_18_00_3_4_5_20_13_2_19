@@ -27,14 +27,13 @@
 
 
 .clock-field {
-  margin-top: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
   padding: 80px;
-  z-index: 1;
+  gap: 24px;
 }
+
 
 .clock {
   width: 60px;
@@ -62,9 +61,21 @@
 
 .clock-unit {
   position: relative;
-  display: inline-block; /* 🔴 THIS IS CRITICAL */
+  display: inline-block;
   width: 70px;
+  height: 70px; /* 🔴 CRITICAL */
+  margin: 12px;
 }
+
+.clock-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+
 
 .hand {
   position: absolute;
@@ -75,6 +86,9 @@
   pointer-events: none;
 }
 
+.clock-unit.has-pendulum {
+  height: 95px;
+}
 
 
 /* spin back to see if these are needed
