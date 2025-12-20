@@ -95,9 +95,8 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
 
 // Inside clocks.js (add at the very bottom)
 
-// Redirect after 3:33
-const REDIRECT_TIME = 5000;
+const REDIRECT_TIME = 5000; // 5 seconds for testing
 
 setTimeout(() => {
-  window.location.href = "logs/log01.html"; // first log
+  window.location.href = "logs/log01.html"; // adjust path if needed
 }, REDIRECT_TIME);
