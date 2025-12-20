@@ -20,6 +20,35 @@ const CLOCK_LINKS = [
   "https://en.wikipedia.org/wiki/Time_travel_claims_and_urban_legends", "https://archiveofourown.org/works/74628486/chapters/195769446", "link48.html", "link49.html", "https://archiveofourown.org/works/74628486/chapters/197028491"
 ];
 
+// store used positions for minimum distance
+const positions = [];
+
+// generate a position biased toward center but spaced out
+function getPosition(size) {
+  const maxAttempts = 50;
+  let attempt = 0;
+  let x, y, tooClose;
+
+  // spread depends on size: bigger clocks can roam a bit more
+  const spread = size > 140 ? 60 : 50;
+
+  do {
+    // biased random: sum of 2 random numbers (bell curve)
+    const randX = (Math.random() + Math.random()) / 2;
+    const randY = (Math.random() + Math.random()) / 2;
+
+    x = 50 - spread/2 + randX * spread;
+    y = 50 - spread/2 + randY * spread;
+
+    // check distance to existing clocks
+    tooClose = positions.some(p => Math.hypot(p.x - x, p.y - y) < 8); // min distance 8%
+    attempt++;
+  } while (tooClose && attempt < maxAttempts);
+
+  positions.push({x, y});
+  return {x, y};
+}
+
 for (let i = 0; i < TOTAL_CLOCKS; i++) {
   const clockIndex = (i % UNIQUE_CLOCKS) + 1;
   const id = String(clockIndex).padStart(2, "0");
@@ -31,9 +60,11 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
   img.src = `images/clocks/clock${id}.png`;
   img.className = "clock";
 
-  // RANDOM POSITION (biased toward center)
-  const x = 50 + (Math.random() - 0.5) * 40; // ~30%-70%
-  const y = 50 + (Math.random() - 0.5) * 40;
+  // RANDOM SIZE
+  const size = 70 + Math.random() * 110;
+
+  // RANDOM POSITION (biased toward center + spaced out)
+  const {x, y} = getPosition(size);
 
   // RANDOM ROTATION
   const rot = (Math.random() * 40) - 20;
@@ -41,9 +72,6 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
   // RANDOM FLOAT OFFSET
   const dx = (Math.random() * 12) - 6;
   const dy = (Math.random() * 12) - 6;
-
-  // RANDOM SIZE VARIATION
-  const size = 70 + Math.random() * 110;
 
   // APPLY STYLES
   img.style.left = `${x}%`;
@@ -64,4 +92,3 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
   link.appendChild(img);
   clockField.appendChild(link);
 }
-
