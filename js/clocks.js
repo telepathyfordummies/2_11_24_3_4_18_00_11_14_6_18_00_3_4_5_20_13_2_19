@@ -9,7 +9,7 @@ const UNIQUE_CLOCKS = 9;
 // 50 deterministic links
 const CLOCK_LINKS = [
   "https://pmc.ncbi.nlm.nih.gov/articles/PMC2790864/", "https://academic.oup.com/journals/pages/the-philosophy-of-time", "https://archiveofourown.org/works/74628486/chapters/198688036", "https://archiveofourown.org/works/74628486/chapters/195543276", "https://www.jstor.org/stable/2011314?seq=1",
-  "link06.html", "https://pmc.ncbi.nlm.nih.gov/articles/PMC4142010/", "https://www.tandfonline.com/doi/full/10.1080/00131857.2025.2463420", "https://www.jacr.org/article/S1546-1440(08)00581-4/fulltext", "https://crl.acrl.org/index.php/crl/article/view/24436/32278",
+  "https://telepathyfordummies.github.io/22_8_18_7/", "https://pmc.ncbi.nlm.nih.gov/articles/PMC4142010/", "https://www.tandfonline.com/doi/full/10.1080/00131857.2025.2463420", "https://www.jacr.org/article/S1546-1440(08)00581-4/fulltext", "https://crl.acrl.org/index.php/crl/article/view/24436/32278",
   "https://positivepsychology.com/psychology-of-happiness/", "https://www.fourmilab.ch/etexts/www/wells/timemach/timemach.pdf", "https://entropiq.com/quantum-locking/", "https://brill.com/display/serial/STIM?language=en&srsltid=AfmBOormfAKDlSYrtkk8rDYtgJMj678Fiksk1JaGsqyn4ZJ13RxT2Dx5", "https://www.sciencedirect.com/science/article/abs/pii/S0740818805001192",
   "https://pmc.ncbi.nlm.nih.gov/articles/PMC7904679/", "https://pmc.ncbi.nlm.nih.gov/articles/PMC7584645/", "https://www.ibiblio.org/ebooks/Dickens/Carol/Dickens_Carol.pdf", "https://www.scientificamerican.com/article/how-do-they-do-that-a-closer-look-at-quantum-magnetic-levitation/", "https://archiveofourown.org/works/74628486/chapters/198325776",
   "https://actionforhappiness.org/how-to-be-happy", "https://www.ijsrp.org/research-paper-0914/ijsrp-p3334.pdf", "https://digitalcommons.morris.umn.edu/cgi/viewcontent.cgi?article=1000&context=honors", "https://therustyquill.wordpress.com/wp-content/uploads/2013/09/into-the-wild.pdf", "https://archiveofourown.org/works/74628486/chapters/198221226",
@@ -20,28 +20,28 @@ const CLOCK_LINKS = [
   "https://en.wikipedia.org/wiki/Time_travel_claims_and_urban_legends", "https://archiveofourown.org/works/74628486/chapters/195769446", "link48.html", "link49.html", "https://archiveofourown.org/works/74628486/chapters/197028491"
 ];
 
-// store used positions for minimum distance
+// store used positions to avoid overlap
 const positions = [];
 
-// generate a position biased toward center but spaced out
+// generate a random position over full page, with optional bias for big clocks
 function getPosition(size) {
   const maxAttempts = 50;
   let attempt = 0;
   let x, y, tooClose;
 
-  // spread depends on size: bigger clocks can roam a bit more
-  const spread = size > 140 ? 60 : 50;
+  const bias = size > 120 ? 0.2 : 0; // 20% bias for big clocks toward center
 
   do {
-    // biased random: sum of 2 random numbers (bell curve)
-    const randX = (Math.random() + Math.random()) / 2;
-    const randY = (Math.random() + Math.random()) / 2;
+    x = Math.random() * 100;
+    y = Math.random() * 100;
 
-    x = 50 - spread/2 + randX * spread;
-    y = 50 - spread/2 + randY * spread;
+    if (bias) {
+      x = x * (1 - bias) + 50 * bias;
+      y = y * (1 - bias) + 50 * bias;
+    }
 
-    // check distance to existing clocks
-    tooClose = positions.some(p => Math.hypot(p.x - x, p.y - y) < 8); // min distance 8%
+    // minimum distance check
+    tooClose = positions.some(p => Math.hypot(p.x - x, p.y - y) < 8);
     attempt++;
   } while (tooClose && attempt < maxAttempts);
 
@@ -63,7 +63,7 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
   // RANDOM SIZE
   const size = 70 + Math.random() * 110;
 
-  // RANDOM POSITION (biased toward center + spaced out)
+  // RANDOM POSITION (full-page with optional bias)
   const {x, y} = getPosition(size);
 
   // RANDOM ROTATION
@@ -85,7 +85,7 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
   // CLICK: smooth fade before redirect
   link.addEventListener("click", e => {
     e.preventDefault();
-    document.body.classList.add("fading"); // assumes .fading CSS exists
+    document.body.classList.add("fading"); // make sure .fading CSS exists
     setTimeout(() => window.location.href = link.href, 500);
   });
 
