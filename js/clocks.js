@@ -92,3 +92,13 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
   link.appendChild(img);
   clockField.appendChild(link);
 }
+
+// Inside clocks.js (add at the very bottom)
+
+// Redirect after 3:33
+const REDIRECT_TIME = (3 * 60 + 33) * 1000;
+
+setTimeout(() => {
+  window.location.href = "final.html";
+}, REDIRECT_TIME);
+
