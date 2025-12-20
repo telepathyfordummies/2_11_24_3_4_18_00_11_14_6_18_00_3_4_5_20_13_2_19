@@ -96,9 +96,8 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
 
 // Inside clocks.js (add at the very bottom)
 
-//document.addEventListener("DOMContentLoaded", () => {
-  //const REDIRECT_TIME = 5000; // 5 seconds for testing
- // setTimeout(() => {
-   // window.location.href = "logs/log01.html";
-//  }, REDIRECT_TIME);
-//});
+const REDIRECT_TIME = (3 * 60 + 33) * 1000;
+
+setTimeout(() => {
+  window.location.href = "logs/log01.html"; // first log
+}, REDIRECT_TIME);
