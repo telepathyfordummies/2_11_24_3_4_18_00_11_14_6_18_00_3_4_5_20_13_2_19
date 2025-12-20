@@ -99,6 +99,6 @@ for (let i = 0; i < TOTAL_CLOCKS; i++) {
 const REDIRECT_TIME = (3 * 60 + 33) * 1000;
 
 setTimeout(() => {
-  window.location.href = "final.html";
+  window.location.href = "log01.html";
 }, REDIRECT_TIME);
 
