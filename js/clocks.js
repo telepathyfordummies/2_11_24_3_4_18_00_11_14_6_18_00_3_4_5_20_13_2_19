@@ -1,6 +1,3 @@
-console.log("Starting clocks.js");
-console.log("clockField:", clockField);
-
 
 const clockField = document.getElementById("clockField");
 
