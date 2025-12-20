@@ -52,13 +52,13 @@ html, body {
 ========================= */
 
 .clock-field {
+  position: relative;
   margin-top: 120vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  padding: 80px;
+  height: 120vh;
+  pointer-events: auto;
+  z-index: 1; /* behind cipher */
 }
+
 
 /* Make links invisible visually */
 .clock-field a {
@@ -70,18 +70,32 @@ html, body {
 ========================= */
 
 .clock {
-  width: 120px;        /* adjust size freely */
+  position: absolute;
+  width: 120px;
   height: auto;
-  display: block;
-  opacity: 0.9;
+  opacity: 0.85;
   cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  animation: float 6s ease-in-out infinite;
 }
+
+.clock:hover {
+  opacity: 1;
+  transform: scale(1.08) rotate(var(--rot));
+}
+
 
 .clock:hover {
   transform: scale(1.08);
   opacity: 1;
 }
+
+@keyframes float {
+  0%   { transform: translate(0, 0) rotate(var(--rot)); }
+  50%  { transform: translate(var(--dx), var(--dy)) rotate(calc(var(--rot) + 2deg)); }
+  100% { transform: translate(0, 0) rotate(var(--rot)); }
+}
+
 
 /* =========================
    FINAL VOID
