@@ -66,95 +66,27 @@ html, body {
 }
 
 /* =========================
-   CLOCK UNIT (CRITICAL)
+   STATIC CLOCKS
 ========================= */
 
-.clock-unit {
-  position: relative;
-  width: 140px;   
-  height: 140px; 
-}
-
-
-/* Extra space for pendulum clock */
-.clock-unit.has-pendulum {
-  height: 190px;
-}
-
-/* =========================
-   CLOCK FACE
-========================= */
-
-.clock-face {
-  width: 100%;
+.clock {
+  width: 120px;        /* adjust size freely */
+  height: auto;
   display: block;
-  position: relative;
-  z-index: 2;
+  opacity: 0.9;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-/* =========================
-   CLOCK HANDS
-========================= */
-
-.hand {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-origin: center bottom;
-  transform: translate(-50%, -100%);
-  z-index: 3;
-  pointer-events: none;
-}
-
-/* Animation */
-@keyframes spin {
-  from { transform: translate(-50%, -100%) rotate(0deg); }
-  to   { transform: translate(-50%, -100%) rotate(360deg); }
-}
-
-.hour {
-  height: 22px;
-  animation: spin 60s linear infinite;
-}
-
-.minute {
-  height: 65px;
-  animation: spin 12s linear infinite;
-}
-
-/* =========================
-   PENDULUM (CLOCK 01 ONLY)
-========================= */
-
-@keyframes swing {
-  from { transform: rotate(-10deg); }
-  to   { transform: rotate(10deg); }
-}
-
-.pendulum {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform-origin: top center;
-  animation: swing 1.2s ease-in-out infinite alternate;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* =========================
-   OPTIONAL POLISH (SAFE)
-========================= */
-
-.clock-unit:hover {
+.clock:hover {
   transform: scale(1.08);
+  opacity: 1;
 }
 
-.clock-unit {
-  transition: transform 0.15s ease;
-}
+/* =========================
+   FINAL VOID
+========================= */
 
-
-/* Final void */
 .void {
   background: white;
   display: flex;
