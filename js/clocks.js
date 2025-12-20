@@ -1,7 +1,7 @@
 const clockField = document.getElementById("clockField");
 
 // how many clocks total
-const TOTAL_CLOCKS = 20;
+const TOTAL_CLOCKS = 50;
 
 // how many unique images you have
 const UNIQUE_CLOCKS = 9;
