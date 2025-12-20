@@ -8,16 +8,16 @@ const UNIQUE_CLOCKS = 9;
 
 // 50 deterministic links
 const CLOCK_LINKS = [
-  "link01.html", "link02.html", "link03.html", "link04.html", "link05.html",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC2790864/", "https://academic.oup.com/journals/pages/the-philosophy-of-time", "https://archiveofourown.org/works/74628486/chapters/198688036", "https://archiveofourown.org/works/74628486/chapters/195543276", "link05.html",
   "link06.html", "link07.html", "link08.html", "link09.html", "link10.html",
   "link11.html", "link12.html", "link13.html", "link14.html", "link15.html",
-  "link16.html", "link17.html", "link18.html", "link19.html", "link20.html",
-  "link21.html", "link22.html", "link23.html", "link24.html", "link25.html",
-  "link26.html", "link27.html", "link28.html", "link29.html", "link30.html",
-  "link31.html", "link32.html", "link33.html", "link34.html", "link35.html",
-  "link36.html", "link37.html", "link38.html", "link39.html", "link40.html",
-  "link41.html", "link42.html", "link43.html", "link44.html", "link45.html",
-  "link46.html", "link47.html", "link48.html", "link49.html", "link50.html"
+  "link16.html", "link17.html", "link18.html", "link19.html", "https://archiveofourown.org/works/74628486/chapters/198325776",
+  "link21.html", "link22.html", "link23.html", "link24.html", "https://archiveofourown.org/works/74628486/chapters/198221226",
+  "link26.html", "link27.html", "link28.html", "link29.html", "https://archiveofourown.org/works/74628486/chapters/198156906",
+  "link31.html", "link32.html", "link33.html", "link34.html", "https://archiveofourown.org/works/74628486/chapters/197561481",
+  "link36.html", "link37.html", "link38.html", "link39.html", "https://archiveofourown.org/works/74628486/chapters/197433296",
+  "link41.html", "link42.html", "link43.html", "link44.html", "https://archiveofourown.org/works/74628486/chapters/196766656",
+  "link46.html", "https://archiveofourown.org/works/74628486/chapters/195769446", "link48.html", "link49.html", "https://archiveofourown.org/works/74628486/chapters/197028491"
 ];
 
 for (let i = 0; i < TOTAL_CLOCKS; i++) {
