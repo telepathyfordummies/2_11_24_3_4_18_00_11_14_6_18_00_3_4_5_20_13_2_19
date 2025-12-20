@@ -8,16 +8,16 @@ const UNIQUE_CLOCKS = 9;
 
 // 50 deterministic links
 const CLOCK_LINKS = [
-  "https://pmc.ncbi.nlm.nih.gov/articles/PMC2790864/", "https://academic.oup.com/journals/pages/the-philosophy-of-time", "https://archiveofourown.org/works/74628486/chapters/198688036", "https://archiveofourown.org/works/74628486/chapters/195543276", "link05.html",
-  "link06.html", "link07.html", "link08.html", "link09.html", "link10.html",
-  "link11.html", "link12.html", "link13.html", "link14.html", "link15.html",
-  "link16.html", "link17.html", "link18.html", "link19.html", "https://archiveofourown.org/works/74628486/chapters/198325776",
-  "link21.html", "link22.html", "link23.html", "link24.html", "https://archiveofourown.org/works/74628486/chapters/198221226",
-  "link26.html", "link27.html", "link28.html", "link29.html", "https://archiveofourown.org/works/74628486/chapters/198156906",
-  "link31.html", "link32.html", "link33.html", "link34.html", "https://archiveofourown.org/works/74628486/chapters/197561481",
-  "link36.html", "link37.html", "link38.html", "link39.html", "https://archiveofourown.org/works/74628486/chapters/197433296",
-  "link41.html", "link42.html", "link43.html", "link44.html", "https://archiveofourown.org/works/74628486/chapters/196766656",
-  "link46.html", "https://archiveofourown.org/works/74628486/chapters/195769446", "link48.html", "link49.html", "https://archiveofourown.org/works/74628486/chapters/197028491"
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC2790864/", "https://academic.oup.com/journals/pages/the-philosophy-of-time", "https://archiveofourown.org/works/74628486/chapters/198688036", "https://archiveofourown.org/works/74628486/chapters/195543276", "https://www.jstor.org/stable/2011314?seq=1",
+  "link06.html", "https://pmc.ncbi.nlm.nih.gov/articles/PMC4142010/", "https://www.tandfonline.com/doi/full/10.1080/00131857.2025.2463420", "https://www.jacr.org/article/S1546-1440(08)00581-4/fulltext", "https://crl.acrl.org/index.php/crl/article/view/24436/32278",
+  "https://positivepsychology.com/psychology-of-happiness/", "https://www.fourmilab.ch/etexts/www/wells/timemach/timemach.pdf", "https://entropiq.com/quantum-locking/", "https://brill.com/display/serial/STIM?language=en&srsltid=AfmBOormfAKDlSYrtkk8rDYtgJMj678Fiksk1JaGsqyn4ZJ13RxT2Dx5", "https://www.sciencedirect.com/science/article/abs/pii/S0740818805001192",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC7904679/", "https://pmc.ncbi.nlm.nih.gov/articles/PMC7584645/", "https://www.ibiblio.org/ebooks/Dickens/Carol/Dickens_Carol.pdf", "https://www.scientificamerican.com/article/how-do-they-do-that-a-closer-look-at-quantum-magnetic-levitation/", "https://archiveofourown.org/works/74628486/chapters/198325776",
+  "https://actionforhappiness.org/how-to-be-happy", "https://www.ijsrp.org/research-paper-0914/ijsrp-p3334.pdf", "https://digitalcommons.morris.umn.edu/cgi/viewcontent.cgi?article=1000&context=honors", "https://therustyquill.wordpress.com/wp-content/uploads/2013/09/into-the-wild.pdf", "https://archiveofourown.org/works/74628486/chapters/198221226",
+  "https://www.healthline.com/health/how-to-be-happy", "https://www.sciencedirect.com/science/article/abs/pii/S1355219804000760", "https://academic.oup.com/iwc/article/33/3/250/6378804", "https://scouting4boysorg.wordpress.com/wp-content/uploads/2017/12/boy-scout-handbook-1967-processed.pdf", "https://archiveofourown.org/works/74628486/chapters/198156906",
+  "https://www.space.com/grandfather-paradox.html", "https://royalsocietypublishing.org/rsta/article/376/2123/20170316/115640/The-quantum-theory-of-time-the-block-universe-and", "https://www.sciencedirect.com/science/article/abs/pii/S105348222030036X", "https://www.nrb.net.in/Books/The%20Encyclopedia%20O%20fNatural%20Medicine.pdf", "https://archiveofourown.org/works/74628486/chapters/197561481",
+  "https://www.epa.gov/sites/default/files/2017-09/documents/emergency_disinfection_of_drinking_water_sept2017.pdf", "https://www.scientificamerican.com/article/does-time-work-differently-in-the-quantum-realm/", "https://pmc.ncbi.nlm.nih.gov/articles/PMC10628673/", "https://www.ohsu.edu/sites/default/files/2018-09/Non-Toxic-Plants.pdf", "https://archiveofourown.org/works/74628486/chapters/197433296",
+  "http://pub.deadnet.se/Books_on_Tech_Survival_woodworking_foraging_etc/urbansurvivalguide.pdf", "https://www.apa.org/pubs/journals/releases/xge-xge0000303.pdf", "https://pmc.ncbi.nlm.nih.gov/articles/PMC3008658/", "https://ag.purdue.edu/btny/purdueweedscience/wp-content/uploads/2021/03/Common-Poisonous-Plants.pdf", "https://archiveofourown.org/works/74628486/chapters/196766656",
+  "https://en.wikipedia.org/wiki/Time_travel_claims_and_urban_legends", "https://archiveofourown.org/works/74628486/chapters/195769446", "link48.html", "link49.html", "https://archiveofourown.org/works/74628486/chapters/197028491"
 ];
 
 for (let i = 0; i < TOTAL_CLOCKS; i++) {
