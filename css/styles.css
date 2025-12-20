@@ -18,13 +18,14 @@ html, body {
 ========================= */
 
 .inside {
-  min-height: 300vh;
+  height: 100vh;
   background-image: url("../images/Act2BACKGROUND.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  overflow-x: hidden;
+  overflow: hidden;
 }
+
 
 /* =========================
    CENTERPIECE (CIPHERS)
