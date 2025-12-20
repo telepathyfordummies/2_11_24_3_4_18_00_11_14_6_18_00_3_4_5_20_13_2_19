@@ -28,7 +28,7 @@ html, body {
 
 
 /* =========================
-   CENTERPIECE (CIPHERS)
+   CIPHERS
 ========================= */
 
 .centerpiece {
@@ -64,7 +64,7 @@ html, body {
 
 
 
-/* Make links invisible visually */
+/* Make links invisible */
 .clock-field a {
   text-decoration: none;
 }
@@ -102,7 +102,7 @@ html, body {
 
 
 /* =========================
-   FINAL VOID
+   FINAL VOID Edit: this got nulled out for a beter idea but hold this here as a surprise tool for later! ;)
 ========================= */
 
 .void {
