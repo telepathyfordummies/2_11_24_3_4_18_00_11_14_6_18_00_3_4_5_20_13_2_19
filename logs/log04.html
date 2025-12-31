@@ -53,6 +53,31 @@
     transition: transform 0.2s ease;
 }
 
+      .back-arrow {
+    position: absolute;
+    top: 5px;
+    left: 15px; /* left instead of right */
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+.back-arrow img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.back-arrow img:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
 
     .prompt {
         margin-top: 40px; 
